@@ -54,7 +54,7 @@ async function compareSnapshotsTask (args): Promise<true | string> {
   return true
 }
 
-export function compareSnapshotsPlugin (on, config) {
+export function addCompareSnapshotsPlugin (on, config) {
   setupScreenshotPath(config)
   on('task', {
     'odiff:compare': async (args) => compareSnapshotsTask(args)

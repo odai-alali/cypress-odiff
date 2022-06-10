@@ -1,7 +1,7 @@
-import {compareSnapshotsPlugin} from "./plugin"
-import {compareSnapshotCommand} from "./command"
+import {addCompareSnapshotsPlugin} from "./plugin"
+import {addCompareSnapshotCommand} from "./command"
 
 export default {
-  compareSnapshotsPlugin,
-  compareSnapshotCommand
+  addCompareSnapshotsPlugin,
+  addCompareSnapshotCommand
 }

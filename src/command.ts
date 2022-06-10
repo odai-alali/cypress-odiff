@@ -27,7 +27,7 @@ declare global {
   }
 }
 
-export function compareSnapshotCommand (defaultScreenshotOptions) {
+export function addCompareSnapshotCommand (defaultScreenshotOptions) {
   Cypress.Commands.add(
     'compareSnapshot',
     { prevSubject: 'optional' },
