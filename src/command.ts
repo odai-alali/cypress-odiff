@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { ACTUAL_SUFFIX } from './constants'
+import {ACTUAL_SUFFIX, SCREENSHOT_EXT} from './constants'
 
 const cypressScreenshotOptions = {
   log: true,
@@ -22,36 +22,40 @@ declare type CompareScreenshotOptions = {
 declare global {
   namespace Cypress {
     interface Chainable {
-      compareScreenshot(options?: Partial<Cypress.ScreenshotOptions | CompareScreenshotOptions> ): void;
+      compareScreenshot(options?: Partial<Cypress.ScreenshotOptions | CompareScreenshotOptions>): void;
     }
   }
 }
 
-export function addCompareScreenshotCommand (defaultScreenshotOptions) {
+export function addCompareScreenshotCommand(defaultScreenshotOptions) {
   Cypress.Commands.add(
     'compareScreenshot',
-    { prevSubject: 'optional' },
-    (subject, name, params = {}) => {
-      cy.log('>> Compare Snapshot')
-      cy.log('>> Take a screenshot')
-
-      const screenshotPath = `${Cypress.spec.relative}/${Cypress.currentTest.title}${ACTUAL_SUFFIX}`
+    {prevSubject: 'optional'},
+    () => {
+      const actualScreenshotPath = `${Cypress.spec.relative}/${Cypress.currentTest.title}${ACTUAL_SUFFIX}${SCREENSHOT_EXT}`
         .replace(/^cypress\/e2e\//, '')
-
-      cy.log('>>> Screenshot Path: ' + screenshotPath)
 
       const screenshotOptions = {
         ...cypressScreenshotOptions,
         ...defaultScreenshotOptions
       }
-      cy.screenshot(screenshotPath, screenshotOptions)
-        .task('odiff:compare', {
-          actualScreenshotPath: screenshotPath
-        }).then((result: true | string) => {
-        if (result !== true) {
-          throw new Error(result)
+      let screenshotPath = 'sss'
+      cy.screenshot({
+        ...screenshotOptions,
+        onAfterScreenshot($el, props) {
+          screenshotPath = props.path
         }
+      }).then(() => {
+        cy.task('odiff:compare', {
+          screenshotPath,
+          actualScreenshotPath
+        }).then((result: true | string) => {
+          if (result !== true) {
+            throw new Error(result)
+          }
+        })
       })
+
     }
   )
 }
