@@ -30,7 +30,7 @@ declare type CompareResult = {
   file?: string;
 }
 
-async function compareSnapshotsTask (args): Promise<true | string> {
+async function compareScreenshotsTask (args): Promise<true | string> {
   const actualAbsolutePath = path.join(CYPRESS_SCREENSHOT_DIR, args.actualScreenshotPath) + SCREENSHOT_EXT
   const expectedAbsolutePath = actualAbsolutePath.replace(ACTUAL_SUFFIX, EXPECTED_SUFFIX)
   const diffAbsolutePath = actualAbsolutePath.replace(ACTUAL_SUFFIX, DIFF_SUFFIX)
@@ -54,10 +54,10 @@ async function compareSnapshotsTask (args): Promise<true | string> {
   return true
 }
 
-export function addCompareSnapshotsPlugin (on, config) {
+export function addCompareScreenshotPlugin (on, config) {
   setupScreenshotPath(config)
   on('task', {
-    'odiff:compare': async (args) => compareSnapshotsTask(args)
+    'odiff:compare': async (args) => compareScreenshotsTask(args)
   })
 }
 

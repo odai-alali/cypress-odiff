@@ -14,7 +14,7 @@ const cypressScreenshotOptions = {
   onAfterScreenshot: null
 }
 
-declare type CompareSnapshotOptions = {
+declare type CompareScreenshotOptions = {
   name?: string,
   errorThreshold?: number
 }
@@ -22,14 +22,14 @@ declare type CompareSnapshotOptions = {
 declare global {
   namespace Cypress {
     interface Chainable {
-      compareSnapshot(options?: Partial<Cypress.ScreenshotOptions | CompareSnapshotOptions> ): void;
+      compareScreenshot(options?: Partial<Cypress.ScreenshotOptions | CompareScreenshotOptions> ): void;
     }
   }
 }
 
-export function addCompareSnapshotCommand (defaultScreenshotOptions) {
+export function addCompareScreenshotCommand (defaultScreenshotOptions) {
   Cypress.Commands.add(
-    'compareSnapshot',
+    'compareScreenshot',
     { prevSubject: 'optional' },
     (subject, name, params = {}) => {
       cy.log('>> Compare Snapshot')

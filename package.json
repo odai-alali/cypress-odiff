@@ -1,6 +1,6 @@
 {
-  "name": "cypress-odiff",
-  "version": "0.0.1-development",
+  "name": "cypress-compare-screenshot",
+  "version": "0.0.0-development",
   "description": "",
   "main": "dist",
   "scripts": {
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/odai-alali/cypress-odiff.git"
+    "url": "https://github.com/odai-alali/cypress-compare-screenshot.git"
   },
   "files": ["dist", "package.json", "README.md"]
 }
