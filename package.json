@@ -32,5 +32,6 @@
     "type": "git",
     "url": "https://github.com/odai-alali/cypress-compare-screenshot.git"
   },
-  "files": ["dist", "package.json", "README.md"]
+  "files": ["dist", "types", "package.json", "README.md"],
+  "types": "dist/index.d.ts"
 }

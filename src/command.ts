@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import {ACTUAL_SUFFIX, SCREENSHOT_EXT} from './constants'
 
 const cypressScreenshotOptions = {
@@ -12,19 +11,6 @@ const cypressScreenshotOptions = {
   overwrite: true,
   onBeforeScreenshot: null,
   onAfterScreenshot: null
-}
-
-declare type CompareScreenshotOptions = {
-  name?: string,
-  errorThreshold?: number
-}
-
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      compareScreenshot(options?: Partial<Cypress.ScreenshotOptions | CompareScreenshotOptions>): void;
-    }
-  }
 }
 
 export function addCompareScreenshotCommand(defaultScreenshotOptions) {

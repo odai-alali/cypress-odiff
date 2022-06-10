@@ -9,9 +9,10 @@
     "rootDir": "src",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node"],
   },
   "include": [
-    "src"
+    "src",
+    "types"
   ]
 }
