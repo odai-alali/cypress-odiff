@@ -30,5 +30,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/odai-alali/cypress-odiff.git"
-  }
+  },
+  "files": ["dist", "package.json", "README.md"]
 }
