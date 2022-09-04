@@ -19,3 +19,4 @@ jobs:
         with:
           name: cypress-odiff-diffs
           path: examples/cypress10/cypress/snapshots/**/*.diff.png
+          if-no-files-found: error
