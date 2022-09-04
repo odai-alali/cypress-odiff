@@ -27,6 +27,7 @@ const { addCompareScreenshotCommand } = require('cypress-odiff')
 
 addCompareScreenshotCommand({
     pluginOptions: {
-        customSnapshotsDir: "cypress/snapshots"
+        customSnapshotsDir: "cypress/snapshots",
+        updateSnapshots: !!Cypress.env('UPDATE_SNAPSHOTS')
     }
 })

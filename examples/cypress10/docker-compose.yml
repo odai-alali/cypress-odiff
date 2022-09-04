@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  update-cypress-snapshots:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ./:/e2e
+      - /e2e/node_modules
+    command: yarn test:ci --env UPDATE_SNAPSHOTS=1 
