@@ -16,7 +16,10 @@ jobs:
         with:
           working-directory: examples/cypress10
       - uses: actions/upload-artifact@v3
+        if: failure()
         with:
           name: cypress-odiff-diffs
-          path: examples/cypress10/cypress/snapshots/**/*.diff.png
+          path: |
+            cypress/snapshots/**/*.diff.png
+            examples/cypress10/cypress/snapshots/**/*.diff.png
           if-no-files-found: error

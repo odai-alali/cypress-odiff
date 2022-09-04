@@ -8,3 +8,12 @@ services:
       - ./:/e2e
       - /e2e/node_modules
     command: yarn test:ci --env UPDATE_SNAPSHOTS=1 
+
+  run-cypress:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ./:/e2e
+      - /e2e/node_modules
+    command: yarn test:ci
