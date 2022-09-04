@@ -6,7 +6,7 @@ describe("visual regression", () => {
 
   Cypress.on('fail', (err, runnable) => {
     const expectedErrors = [
-      // "Screenshots does not match. 1251 pixels difference (0.0715675057208%)",
+      "Screenshots does not match. 1251 pixels difference (0.0715675057208%)",
       "Expected image is missing"
     ]
     if (!expectedErrors.includes(err.message)) {
