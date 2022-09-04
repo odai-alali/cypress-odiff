@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "cypress": "10.7.0",
-    "cypress-odiff": "0.0.0-development",
+    "cypress-odiff": "1.1.0",
     "eslint": "8.23.0",
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-prettier": "4.2.1",

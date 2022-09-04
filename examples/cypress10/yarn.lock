@@ -405,10 +405,10 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cypress-odiff@0.0.0-development:
-  version "0.0.0-development"
-  resolved "https://registry.yarnpkg.com/cypress-odiff/-/cypress-odiff-0.0.0-development.tgz#d8c2ea3e3bf7943d821371ff2d217457024cff9b"
-  integrity sha512-cSGDnqGOH3F9U+6XRGXVof5vgwulWsPlPUg8aXBrA+4rOetKNez32WzD+mAetib4lgBr5qMJrVtTH69n8tze1g==
+cypress-odiff@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cypress-odiff/-/cypress-odiff-1.1.0.tgz#b4d3edd4d08477482184e60d7820cd7d5433c19d"
+  integrity sha512-MUx1PXZrFC1Nqv2SAKeTOkhz1e2n1LDz5mX8D7yBkcj7BoOVpTCfkywYnRPVIzUqQARGMoTxE/s9UZ+1tmQ2Aw==
   dependencies:
     odiff-bin "2.5.0"
 
