@@ -1,4 +1,4 @@
-# Cypress Compare Screenshot
+# Cypress ODiff
 
 A plugin for adding visual regression test to [Cypress](https://cypress.io) using [ODiff](https://github.com/dmtrKovalenko/odiff) _The fastest pixel-by-pixel image visual difference tool in the world_.
 
@@ -54,9 +54,16 @@ the command `compareScreenshot` will:
 - create a screenshot (expected) under `cypress/screenshots/example.cy.js/passes.png` and save it for further runs
 - if the screenshot is already created, the command will compare the recorded screenshot (actual) with the previously saved one (expected) and fail if there is a difference between these two screenshots. An image with the highlighted differences (diff) will be created.
 
-## ToDo
-- [ ] write tests
-- [ ] provide options to save screenshots under another directory
-- [ ] provide options to set failure threshold
-- [ ] update (expected) screenshot
-- [ ] ...
+## Options
+
+`compareScreenshot` accepts an options object with the following keys:
+- **screenshotOptions**: will be passed to `cy.screenshot()` command to capture screenshot. see Cypress `screenshot` options [docs](https://docs.cypress.io/api/commands/screenshot#Arguments).
+- **compareOptions**: will be passed to `compare` method from []() package. see [ODiff Nodejs](https://github.com/dmtrKovalenko/odiff#nodejs-1).
+- **pluginOptions**: These options define how this plugin should behave.
+
+### Plugin Options
+| name | default | |
+|---|---|---|
+| `customSnapshotsDir` | `"cypress/snapshots"` | should be under cypress directory. `.expected`, `.actual`, `.diff` screenshots will be saved under this path. |
+| `updateSnapshots` | `undefined` | if `true`, plugin will save the screenshot with `.expected` suffix and this image will be used for furthur visual regressions tests |
+| `failOnExpectedMissing` | `undefined` | if `true` the test will fail when `.expected` screenshot does not exist. This is particulary usefull when running test on ci.|
