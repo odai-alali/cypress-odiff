@@ -1,0 +1,20 @@
+{
+  "name": "cypress10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test:open": "cypress open",
+    "test:ci": "cypress run",
+    "lint": "eslint 'cypress/**/*.js' --fix"
+  },
+  "devDependencies": {
+    "cypress": "10.7.0",
+    "cypress-odiff": "1.1.0",
+    "eslint": "8.23.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.7.1"
+  },
+  "dependencies": {}
+}
