@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test:open": "cypress open",
+    "test:ci": "cypress run",
     "lint": "eslint 'cypress/**/*.js' --fix"
   },
   "devDependencies": {
