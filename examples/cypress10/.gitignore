@@ -1,0 +1,9 @@
+/cypress/videos/
+/cypress/screenshots/
+/cypress/logs/
+node_modules
+results
+coverage
+.nyc_output
+*.actual.png
+*.diff.png
