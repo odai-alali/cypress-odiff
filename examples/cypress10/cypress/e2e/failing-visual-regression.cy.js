@@ -16,6 +16,7 @@ describe("visual regression", () => {
   it("should fail when expected screenshot is missing", () => {
 
     cy.visit('https://example.cypress.io')
+    cy.wait(1000)
     cy.compareScreenshot({
       screenshotOptions: {
         capture: "viewport"
@@ -29,6 +30,7 @@ describe("visual regression", () => {
   it("should fail when diff is detected", () => {
 
     cy.visit('https://example.cypress.io')
+    cy.wait(1000)
     cy.compareScreenshot({
       screenshotOptions: {
         capture: "viewport"
