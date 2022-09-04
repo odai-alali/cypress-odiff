@@ -11,13 +11,13 @@ ODiff [Benchmarks](https://github.com/dmtrKovalenko/odiff#benchmarks) are the ma
 Install:
 
 ```sh
-$ npm install cypress-compare-snapshots
+$ npm install cypress-odiff
 ```
 
 Add the plugin
 
 ```js
-const { addCompareScreenshotPlugin } = require('cypress-compare-screenshot')
+const { addCompareScreenshotPlugin } = require('cypress-odiff')
 
 module.exports = defineConfig({
   trashAssetsBeforeRuns: false, // needed to avoid deleting expeted screenshot
@@ -32,7 +32,7 @@ module.exports = defineConfig({
 Add the command in support/commands.js
 
 ```js
-const { addCompareScreenshotCommand } = require('cypress-compare-screenshot')
+const { addCompareScreenshotCommand } = require('cypress-odiff')
 
 addCompareScreenshotCommand({})
 ```
