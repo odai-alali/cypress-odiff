@@ -20,6 +20,7 @@ jobs:
         with:
           name: cypress-odiff-diffs
           path: |
-            cypress/snapshots/**/*.diff.png
             examples/cypress10/cypress/snapshots/**/*.diff.png
+            examples/cypress10/cypress/snapshots/**/*.expected.png
+            examples/cypress10/cypress/snapshots/**/*.actual.png
           if-no-files-found: error
