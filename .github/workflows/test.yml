@@ -4,6 +4,7 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    container: cypress/base:16.14.2
     steps:
       - uses: actions/checkout@v2
       - name: Setup Node.js
