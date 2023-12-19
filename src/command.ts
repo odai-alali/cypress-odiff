@@ -22,10 +22,7 @@ export function addCompareScreenshotCommand(defaultScreenshotOptions: CompareScr
     'compareScreenshot',
     {prevSubject: 'optional'},
     (subject, options: CompareScreenshotOptions = {}) => {
-      const specRelativPath = Cypress.spec.relative.replace(
-        /^cypress\/(e2e|integrations)\//,
-        ""
-      );
+      const specRelativPath = getCleanSpecRelativePath(Cypress.spec.relative);
       const screenshotTitle = Cypress.currentTest.titlePath.join(" -- ");
       const screenshotOptions = {
         ...defaultScreenshotOptions.screenshotOptions,
@@ -93,5 +90,14 @@ export function addCompareScreenshotCommand(defaultScreenshotOptions: CompareScr
         });
     }
   )
+}
+
+function getCleanSpecRelativePath(relative: string) {
+  return relative.replace(
+    /^cypress\/(e2e|integrations)\//,
+    ""
+  ).replace(
+    /^cypress\\(e2e|integrations)\\/,
+  "");
 }
 
